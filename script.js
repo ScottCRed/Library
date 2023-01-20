@@ -4,7 +4,7 @@ function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
   this.pages = pages;
-  read = read;
+  this.read = read;
 }
 
 const book1 = new Book('Hooray', 'Me', '300', true);
