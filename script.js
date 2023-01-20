@@ -16,6 +16,10 @@ const book1 = new Book('Hooray', 'Me', '300', false);
 console.log(book1);
 console.log(book1.info())
 
+function infoPrompt () {
+  
+}
+
 function addBook () {
   return 'add a book'
 };
@@ -23,3 +27,9 @@ function addBook () {
 function removeBook () {
   return 'remove a book'
 }
+
+const addClick = document.querySelector('.add');
+
+  addClick.addEventListener('click', () =>{
+    console.log('eat a dick')
+  })
