@@ -20,6 +20,6 @@ Submit Function:
 
 Book Elements:
 - displayes information
-- red/not read button
-- remove book button
-- displays sequentially when added
+- red/not read button >> toggle function using book protoype instance
+- remove book button >> use array index to select individual books
+- loops through array of book and displays sequentially when added
