@@ -1,4 +1,6 @@
 /* eslint-disable */
+let collection =[];
+
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -9,7 +11,15 @@ function Book(title, author, pages, read) {
   }
 }
 
-const book1 = new Book('Hooray', 'Me', '300', true);
+const book1 = new Book('Hooray', 'Me', '300', false);
 
 console.log(book1);
 console.log(book1.info())
+
+function addBook () {
+  return 'add a book'
+};
+
+function removeBook () {
+  return 'remove a book'
+}
