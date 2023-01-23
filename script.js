@@ -1,10 +1,7 @@
 /* eslint-disable */
+
+//Book arrays + info
 let collection =[];
-
-const addClick = document.querySelector('.add');
-
-  addClick.addEventListener('click', infoPrompt)
-
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -20,14 +17,22 @@ const book1 = new Book('Hooray', 'Me', '300', false);
 console.log(book1);
 console.log(book1.info())
 
-function infoPrompt () {
-  const container = document.querySelector('#container');
-    const infoBox = document.createElement('div');
-    infoBox.classList.add('infoBox');
-    infoBox.textContent = "Oh hi!"
+//functions and functionality
 
-    container.appendChild(infoBox)
-  console.log('div goes here')
+const addClick = document.querySelector('.add');
+  addClick.addEventListener('click', infoPrompt);
+
+const closeClick = document.querySelector('.closeInfo');
+    closeClick.addEventListener('click', closeForm);
+
+function infoPrompt () {
+  const infoPrompt = document.querySelector('.test');
+  infoPrompt.style.display = 'block';
+}
+
+function closeForm () {
+  const infoPrompt = document.querySelector('.test');
+  infoPrompt.style.display = 'none';
 }
 
 function addBook () {
