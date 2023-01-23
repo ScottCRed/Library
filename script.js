@@ -39,8 +39,8 @@ function closeForm () {
 function displayBooks () {
   const bookContainer = document.querySelector('.bookContainer');
     bookContainer.innerHTML = ''
-    //const books = document.querySelectorAll('.bookItem')
-    //books.forEach(bookItem => display.removeChild(bookItem))
+    const books = document.querySelectorAll('.bookItem')
+    books.forEach(bookItem => display.removeChild(bookItem))
  
   for (let i = 0; i < collection.length; i++){
       bookItem(collection[i]);
@@ -110,7 +110,9 @@ function bookItem (item) {
   bookItem.appendChild(remove);
 
   remove.addEventListener('click', () => { 
+    console.log('remove the thing')
     collection.splice(collection.indexOf(item),1);
+    displayBooks();
   });
 
 };
