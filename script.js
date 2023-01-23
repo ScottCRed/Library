@@ -21,7 +21,13 @@ console.log(book1);
 console.log(book1.info())
 
 function infoPrompt () {
-  console.log('eat a dick')
+  const container = document.querySelector('#container');
+    const infoBox = document.createElement('div');
+    infoBox.classList.add('infoBox');
+    infoBox.textContent = "Oh hi!"
+
+    container.appendChild(infoBox)
+  console.log('div goes here')
 }
 
 function addBook () {
