@@ -1,6 +1,10 @@
 /* eslint-disable */
 let collection =[];
 
+const addClick = document.querySelector('.add');
+
+  addClick.addEventListener('click', infoPrompt)
+
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -17,7 +21,7 @@ console.log(book1);
 console.log(book1.info())
 
 function infoPrompt () {
-  
+  console.log('eat a dick')
 }
 
 function addBook () {
@@ -28,8 +32,3 @@ function removeBook () {
   return 'remove a book'
 }
 
-const addClick = document.querySelector('.add');
-
-  addClick.addEventListener('click', () =>{
-    console.log('eat a dick')
-  })
