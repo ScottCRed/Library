@@ -45,6 +45,7 @@ function addBook () {
   closeForm();
   const newBook = new Book(form.title.value, form.author.value, form.pages.value, form.read.checked)
   collection.push(newBook);
+  form.reset();
   console.log(collection);
 };
 
