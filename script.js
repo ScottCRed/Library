@@ -6,7 +6,7 @@ class Book{
   this.title = form.title.value;
   this.author = form.author.value;
   this.pages = form.pages.value;
-  this.read = form.read.value;
+  this.read = form.read.checked;
   }
 }
 
@@ -76,11 +76,45 @@ function bookItem (item) {
 
   
   const pages = document.createElement('div');
-  pages.textContent = item.pages;
+  pages.textContent = item.pages + ' Pages';
   bookItem.appendChild(pages);
-}
+
+  const read = document.createElement('button');
+  bookItem.appendChild(read);
+
+  if(item.read===false) {
+    read.textContent = 'Not Read'
+    read.style.backgroundColor = 'Red'
+  } else {
+    read.textContent = 'Read'
+    read.style.backgroundColor = 'Green'
+  };
+
+  read.addEventListener('click', () => {
+    
+    if(item.read===false) {
+      item.read = true
+      read.textContent = 'Read'
+      read.style.backgroundColor = 'Green'
+      console.log(item.read);
+    } else {
+      item.read = false
+      read.textContent = 'Not Read'
+      read.style.backgroundColor = 'red'
+    }
+  
+  });
+
+  const remove = document.createElement('button');
+  remove.textContent = 'Remove'
+  bookItem.appendChild(remove);
+
+  remove.addEventListener('click', () => { 
+    collection.splice(collection.indexOf(item),1);
+  });
+
+};
 
 function removeBook () {
   return 'remove a book'
-}
-
+};
