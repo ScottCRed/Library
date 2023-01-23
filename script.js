@@ -11,17 +11,12 @@ class Book{
 }
 
 let collection =[];
-console.log(collection);
-
 
 //functions and functionality
 
 
 const addClick = document.querySelector('.add');
     addClick.addEventListener('click', infoPrompt);
-
-const closeClick = document.querySelector('.closeInfo');
-    closeClick.addEventListener('click', closeForm);
 
 const submitClick = document.querySelector('.submit-button')
     submitClick.addEventListener('click', addBook);
@@ -54,7 +49,6 @@ function addBook () {
   collection.push(newBook);
   form.reset();
   displayBooks();
-  console.log(collection);
 };
 
 function bookItem (item) {
@@ -96,7 +90,7 @@ function bookItem (item) {
       item.read = true
       read.textContent = 'Read'
       read.style.backgroundColor = 'Green'
-      console.log(item.read);
+
     } else {
       item.read = false
       read.textContent = 'Not Read'
@@ -110,13 +104,8 @@ function bookItem (item) {
   bookItem.appendChild(remove);
 
   remove.addEventListener('click', () => { 
-    console.log('remove the thing')
     collection.splice(collection.indexOf(item),1);
     displayBooks();
   });
 
-};
-
-function removeBook () {
-  return 'remove a book'
 };
