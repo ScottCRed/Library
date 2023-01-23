@@ -1,3 +1,17 @@
+.bookContainer {
+    display: flex;
+}
+
+.bookItem {
+    border-style: solid;
+    border-color: black;
+    border-radius: 5%;
+    margin: 5px;
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+}
+
 .test {
     display: none;
     position: fixed;

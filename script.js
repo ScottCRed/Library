@@ -21,6 +21,7 @@ console.log(collection);
 
 //functions and functionality
 
+
 const addClick = document.querySelector('.add');
     addClick.addEventListener('click', infoPrompt);
 
@@ -40,12 +41,26 @@ function closeForm () {
   infoPrompt.style.display = 'none';
 }
 
+function displayBooks () {
+  const bookContainer = document.querySelector('.bookContainer');
+    bookContainer.innerHTML = ''
+ 
+  for (let i = 0; i < collection.length; i++){
+    const bookItem = document.createElement('div');
+    bookItem.classList.add('bookItem');
+    bookItem.textContent = 'this is where the book goes';
+  
+    bookContainer.appendChild(bookItem);
+  }
+}
+
 function addBook () {
   event.preventDefault();
   closeForm();
   const newBook = new Book(form.title.value, form.author.value, form.pages.value, form.read.checked)
   collection.push(newBook);
   form.reset();
+  displayBooks();
   console.log(collection);
 };
 
