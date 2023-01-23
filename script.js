@@ -1,7 +1,11 @@
 /* eslint-disable */
 
 //Book arrays + info
-let collection =[];
+const book1 = new Book('Hooray', 'Me', '300', false);
+const book2 = new Book('it\'s me!', 'Me again', '600', true);
+const book3 = new Book('JK PAWNING', 'JK ROLLING', '5', false);
+
+let collection =[book1, book2, book3];
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -12,18 +16,19 @@ function Book(title, author, pages, read) {
   }
 }
 
-const book1 = new Book('Hooray', 'Me', '300', false);
+console.log(collection);
 
-console.log(book1);
-console.log(book1.info())
 
 //functions and functionality
 
 const addClick = document.querySelector('.add');
-  addClick.addEventListener('click', infoPrompt);
+    addClick.addEventListener('click', infoPrompt);
 
 const closeClick = document.querySelector('.closeInfo');
     closeClick.addEventListener('click', closeForm);
+
+const submitClick = document.querySelector('.submit-button')
+    submitClick.addEventListener('click', addBook);
 
 function infoPrompt () {
   const infoPrompt = document.querySelector('.test');
@@ -36,7 +41,11 @@ function closeForm () {
 }
 
 function addBook () {
-  return 'add a book'
+  event.preventDefault();
+  closeForm();
+  const newBook = new Book(form.title.value, form.author.value, form.pages.value, form.read.checked)
+  collection.push(newBook);
+  console.log(collection);
 };
 
 function removeBook () {
